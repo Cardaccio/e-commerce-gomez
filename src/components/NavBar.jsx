@@ -12,12 +12,13 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Logo from "../assets/img/isologo-tegopet.png";
+import CartWidget from './CartWidget';
 
 
 const pages = ['Productos', 'Nosotros', 'Blog', 'Contacto'];
 const settings = ['Mis datos', 'Compras', 'Mis medallas', 'Cerrar Sesion'];
 
-const ResponsiveAppBar = () => {
+const NavBar = (props) => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -111,8 +112,9 @@ const ResponsiveAppBar = () => {
                             </Button>
                         ))}
                     </Box>
+                    <CartWidget/>
 
-                    <Box sx={{ flexGrow: 0 }}>
+                    <Box sx={{ flexGrow: 0, marginLeft:3,}}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="Tegopet" src="/static/images/avatar/2.jpg" />
@@ -146,4 +148,4 @@ const ResponsiveAppBar = () => {
         </AppBar>
     );
 };
-export default ResponsiveAppBar;
+export default NavBar;
