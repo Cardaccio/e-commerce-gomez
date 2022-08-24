@@ -17,3 +17,25 @@ code {
   text-transform: uppercase;
   font-size: 4rem;
 }
+
+.item-div{
+  background-color: rgb(221, 221, 221);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+
+}
+.item-qty{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 12.5rem;
+  background-color: white;
+  border: 1px rgb(40, 158, 255) solid;
+  border-radius: 0.2rem;
+  padding: 0.3rem;
+  margin-bottom: 1rem;
+}
