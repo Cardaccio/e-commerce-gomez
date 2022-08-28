@@ -39,3 +39,9 @@ code {
   padding: 0.3rem;
   margin-bottom: 1rem;
 }
+
+.center{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}

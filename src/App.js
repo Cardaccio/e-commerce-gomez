@@ -5,6 +5,7 @@ import ItemCount from "./components/ItemCount";
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
 
+
 function App() {
   let itemOne = { stock: 5, initial: 1 };
   const onAdd = (cant) =>
@@ -18,11 +19,11 @@ function App() {
       progress: undefined,
     });
 
-  let greeting = "Bienvenido!";
+
   return (
     <div>
       <NavBar />
-      <ItemListContainer greeting={greeting} />
+
       <ItemCount
         stock={itemOne.stock}
         initial={itemOne.initial}
@@ -39,6 +40,8 @@ function App() {
         draggable
         pauseOnHover
       />
+
+      <ItemListContainer className="center"/>
     </div>
   );
 }
