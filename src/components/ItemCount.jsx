@@ -6,7 +6,6 @@ function ItemCount({ stock, initial, onAdd }) {
   const [cant, setCant] = useState(initial);
   return (
     <div className="item-div">
-      <h3>Producto</h3>
       <div className="item-qty">
         <Button style={{ fontSize: '2rem  ' }} variant="text" 
           onClick={() => {

@@ -4,8 +4,8 @@ import Item from "./Item";
 const ItemList = ({ items }) => {
   return (
     <section className="center">
-      {items.map((producto) => {
-        return <Item producto={producto} />;
+      {items.map((product) => {
+        return <Item product={product} key={product.id} />;
       })}
     </section>
   );
