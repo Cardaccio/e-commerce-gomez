@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Logo from "../assets/img/isologo-tegopet.png";
 import CartWidget from './CartWidget';
+import { Link as RouterLink}  from 'react-router-dom'; 
 
 
 const pages = ['Productos', 'Nosotros', 'Blog', 'Contacto'];
@@ -45,6 +46,7 @@ const NavBar = (props) => {
                         component="img"
                         alt="Tegopet Logo"
                         src={Logo}
+                        href= {'/'}
                     />
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
