@@ -13,13 +13,13 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Logo from "../assets/img/isologo-tegopet.png";
 import CartWidget from './CartWidget';
-import { Link as RouterLink}  from 'react-router-dom'; 
+import { Link as RouterLink}   from 'react-router-dom'; 
 
 
-const pages = ['Productos', 'Nosotros', 'Blog', 'Contacto'];
+const pages = ['Medallas', 'Collares', 'Blog', 'Contacto'];
 const settings = ['Mis datos', 'Compras', 'Mis medallas', 'Cerrar Sesion'];
 
-const NavBar = (props) => {
+const NavBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -39,15 +39,16 @@ const NavBar = (props) => {
     };
 
     return (
-        <AppBar position="static">
+        <AppBar position="fixed">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
+                    <RouterLink to="/" >
                     <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }, height:'4rem' }}
                         component="img"
                         alt="Tegopet Logo"
                         src={Logo}
-                        href= {'/'}
                     />
+                    </RouterLink>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
@@ -79,17 +80,18 @@ const NavBar = (props) => {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                <RouterLink key={page} to={`/category/${page}`}>
+                                <MenuItem  onClick={handleCloseNavMenu} >
                                     <Typography textAlign="center">{page}</Typography>
                                 </MenuItem>
+                                </RouterLink>
                             ))}
                         </Menu>
                     </Box>
                     <Typography
                         variant="h5"
                         noWrap
-                        component="a"
-                        href=""
+                        component={RouterLink} to={`/`}
                         sx={{
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
@@ -106,6 +108,7 @@ const NavBar = (props) => {
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
+                            component={RouterLink} to={`/category/${page}`}
                                 key={page}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}

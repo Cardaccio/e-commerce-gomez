@@ -29,7 +29,7 @@ code {
 }
 .item-qty{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   background-color: white;
@@ -40,10 +40,19 @@ code {
 }
 
 .center{
+  max-width: 90vw;
   display: flex;
   align-content: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
-  margin: 2rem auto;
+  margin: 1rem;
 }
 
+.prod-img{
+  margin-top: 1rem;
+  max-width: 40rem;
+}
+
+.full-div{
+  height: 100vh;
+}

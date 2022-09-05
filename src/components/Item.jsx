@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import ItemCount from './ItemCount';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link as RouterLink}   from 'react-router-dom'; 
 
 function Item({product}) {
   //const image = require(`../assets/img/${producto.pictureUrl}`).default;
@@ -23,20 +24,23 @@ function Item({product}) {
 
   return (
     <Card sx={{ maxWidth: 345 }}>
+      <RouterLink to={`/product/${product.id}`}>
       <CardMedia
         component="img"
         alt={product.title}
-        height="140"
+        height="200"
         image={product.pictureUrl}
       />
+      </RouterLink>
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="div" textAlign={'center'}>
           {product.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="h6" color="text.secondary" textAlign={'center'}>
           $ {product.price}
         </Typography>
       </CardContent>
+ 
       <CardActions>
         <ItemCount stock={product.stock}
         initial={product.initial}

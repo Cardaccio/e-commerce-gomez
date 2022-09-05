@@ -33,8 +33,9 @@ function ItemCount({ stock, initial, onAdd }) {
             onAdd(cant);
           }
         }}
+        startIcon={<AddShoppingCartIcon />}
       >
-        <AddShoppingCartIcon />  Agregar al Carrito
+          Agregar al Carrito
       </Button>
     </div>
   );

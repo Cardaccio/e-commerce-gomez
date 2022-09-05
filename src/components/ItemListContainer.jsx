@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 
 
 export default function ItemListContainer() {
-  const { idcategory, idproduct } = useParams(); 
+  const { idcategory} = useParams(); 
 
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,7 +18,8 @@ export default function ItemListContainer() {
       }, 2000);
     });
 
-    itemsArray
+    if(!idcategory){
+      itemsArray
       .then((res) => {
         setItems(res);
       })
@@ -28,10 +29,24 @@ export default function ItemListContainer() {
       .finally((loading) => {
         setLoading(false);
       });
-  }, []);
+    }else{
+      itemsArray
+      .then((res) => {
+        
+        setItems(res.filter((product)=>product.idcategory === idcategory));
+      })
+      .catch((err) => {
+        console.log("No se pudo cargar");
+      })
+      .finally((loading) => {
+        setLoading(false);
+      });
+    }
+
+  }, [idcategory]);
 
   if (loading) {
-    return <CircularProgress />;
+    return <div className="center full-div"><CircularProgress /></div>;
   } else {
     return <ItemList items={items} />;
   }
