@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Evento from "./test/Evento";
+import Cart from "./components/Cart";
 
 
 function App() {
@@ -30,10 +31,11 @@ function App() {
           <Routes>
             <Route path="/" element={<ItemListContainer className="center"/>}/>
             <Route path="/test" element={<Evento className="center"/>}/>
+            <Route path="/cart" element={<Cart className="center"/>}/>
             <Route path="/category/:idcategory" element={<ItemListContainer className="center"/>}/>
             <Route path="/product/:idproduct" element={<ItemDetailContainer className="center"/>}/>
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
       </BrowserRouter>
 
 

@@ -27,7 +27,7 @@ const Footer = () => {
 
 
     return (
-        <AppBar position="static" color="secondary" sx={{ top: 'auto', bottom: 0 }}>
+        <AppBar position="fixed" color="secondary" sx={{ top: 'auto', bottom: 0 }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography

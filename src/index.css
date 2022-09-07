@@ -56,3 +56,14 @@ code {
 .full-div{
   height: 100vh;
 }
+
+.outlined{
+  border: 1px black solid;
+  border-radius: 2rem;
+  height: 60vh;
+  width: 60vw;
+}
+
+.prod-div{
+  margin-bottom: 2rem;
+}

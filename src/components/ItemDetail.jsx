@@ -5,18 +5,23 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ItemCount from './ItemCount';
 
+
 export default function ItemDetail({item}) {
 
-    const onAdd = (cant) =>
-    toast.success(`Agregaste al carrito ${cant} 👌`, {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
+
+
+    const onAdd = (cant) => {
+      toast.success(`Agregaste al carrito ${cant} 👌`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+    };
+
   return (
     <React.Fragment>
       <CssBaseline />
