@@ -3,15 +3,15 @@ import Button from '@mui/material/Button';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Link as RouterLink}   from 'react-router-dom'; 
 
-function ItemCount({ stock, initial, onAdd }) {
+function ItemCount({ stock, initial, onAdd, cant, setCant }) {
   const[showButton, setShowButton] = useState(false);
-  const [cant, setCant] = useState(initial);
+  
   return (
     <div className="item-div">
       <div className="item-qty">
         <Button style={{ fontSize: '2rem  ' }} variant="text" 
           onClick={() => {
-            if (cant > 0) {
+            if (cant > initial) {
               setCant(cant - 1);
             }
           }}

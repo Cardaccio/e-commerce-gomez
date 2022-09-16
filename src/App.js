@@ -8,12 +8,13 @@ import Footer from "./components/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Evento from "./test/Evento";
 import Cart from "./components/Cart";
+import {CartProvider} from "./components/CartContext";
 
 
 function App() {
 
   return (
- 
+    <CartProvider>
       <BrowserRouter> 
         <NavBar />
 
@@ -27,7 +28,7 @@ function App() {
           pauseOnFocusLoss
           draggable
           pauseOnHover
-        />
+          />
           <Routes>
             <Route path="/" element={<ItemListContainer className="center"/>}/>
             <Route path="/test" element={<Evento className="center"/>}/>
@@ -37,6 +38,7 @@ function App() {
           </Routes>
           {/* <Footer /> */}
       </BrowserRouter>
+    </CartProvider>
 
 
       
