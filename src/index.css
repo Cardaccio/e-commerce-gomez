@@ -46,11 +46,16 @@ code {
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 1rem;
+  align-items: center;
 }
 
 .prod-img{
   margin-top: 1rem;
   max-width: 40rem;
+}
+
+.thumb-img{
+  max-width: 10rem;
 }
 
 .full-div{
@@ -62,6 +67,7 @@ code {
   border-radius: 2rem;
   height: 60vh;
   width: 60vw;
+  padding: 1rem;
 }
 
 .prod-div{
