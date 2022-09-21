@@ -9,7 +9,7 @@ function CartItem({item}) {
     const {removeItem} = useCart();
   return (
     <div className='center'>
-    <Stack direction="row" spacing={6} alignItems="center" justifyContent="space-around">
+    <Stack direction="row" spacing={6} alignItems="center" justifyContent="space-between">
         <img src={item.pictureUrl} alt={item.title} className="thumb-img"/>
         <span>{item.title}</span>
         <span>{item.quantity}</span>

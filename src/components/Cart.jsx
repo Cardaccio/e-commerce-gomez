@@ -7,7 +7,6 @@ import CartItem from './CartItem';
 
 function Cart() {
   const {cart, cartTotal, clearCart} = useCart()
-  console.log(cart)
   return (
     <div className='center'>
       <div className='outlined'>
@@ -20,7 +19,7 @@ function Cart() {
           <h3>Total: $ {cartTotal()}</h3>
           <div className='center'>
             <Button style={{ fontSize: '0.8rem' }} variant="text" onClick={clearCart}>Vaciar carrito</Button>
-            <Button style={{ fontSize: '1rem' }} variant="contained" color="success">Ir a Pagar</Button>
+            <Button style={{ fontSize: '1rem' }} variant="contained" color="success" component={RouterLink} to={`/checkout`}>Finalizar compra</Button>
           </div>
         </div>
         }
