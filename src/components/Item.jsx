@@ -9,8 +9,6 @@ import { Link as RouterLink}   from 'react-router-dom';
 import Button from '@mui/material/Button';
 
 function Item({product}) {
-  //const image = require(`../assets/img/${producto.pictureUrl}`).default;
-
   return (
     <Card sx={{ maxWidth: 345 }}>
       <RouterLink to={`/product/${product.id}`}>

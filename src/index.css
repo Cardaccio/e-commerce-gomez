@@ -53,20 +53,29 @@ code {
   margin-top: 1rem;
   max-width: 40rem;
 }
+@media screen and (max-width:900px) {
+  .prod-img{
+    max-width: 20rem;
+  }
+  .outlined{
+    border-width: 0;
+
+  }
+}
 
 .thumb-img{
   max-width: 10rem;
 }
 
 .full-div{
-  height: 100vh;
+  height: 80%;
 }
 
 .outlined{
   border: 1px black solid;
   border-radius: 2rem;
   height: 60vh;
-  width: 60vw;
+  width: 70vw;
   padding: 1rem;
 }
 

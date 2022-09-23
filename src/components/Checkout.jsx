@@ -47,6 +47,7 @@ export default function Checkout() {
         setNewOrder(res.id);
         setPurchase(true);
         clearCart()
+        localStorage.clear()
       })
       .catch((err)=>console.log(err) )
   
