@@ -12,6 +12,7 @@ import {CartProvider} from "./components/CartContext";
 import Checkout from "./components/Checkout";
 
 
+
 function App() {
 
   return (
@@ -38,7 +39,7 @@ function App() {
             <Route path="/category/:idcategory" element={<ItemListContainer className="center"/>}/>
             <Route path="/product/:idproduct" element={<ItemDetailContainer className="center"/>}/>
           </Routes>
-          {/* <Footer /> */}
+          <Footer />
       </BrowserRouter>
     </CartProvider>
 

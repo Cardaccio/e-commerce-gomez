@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import ItemList from "./ItemList";
-import products from "../items"
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../firebase/firebase";
@@ -66,8 +65,12 @@ export default function ItemListContainer() {
   }, [idcategory]);
 */
   if (loading) {
-    return <div className="center full-div"><CircularProgress /></div>;
+    return <div className="center full-div">
+              <CircularProgress />
+           </div>;
   } else {
-    return <ItemList items={items} />;
+    return <>
+    <ItemList items={items} />;
+    </>
   }
 }
