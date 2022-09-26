@@ -9,12 +9,14 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
 import {CartProvider} from "./components/CartContext";
 import Checkout from "./components/Checkout";
-
+import { ThemeProvider } from '@mui/material/styles';
+import {tegoTheme} from './components/ThemeTego';
 
 
 function App() {
 
   return (
+    <ThemeProvider theme={tegoTheme}>
     <CartProvider>
       <BrowserRouter> 
         <NavBar />
@@ -40,6 +42,7 @@ function App() {
           <Footer />
       </BrowserRouter>
     </CartProvider>
+    </ThemeProvider>
 
    
   );

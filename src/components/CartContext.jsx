@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState } from "react";
 import { useEffect } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const CartContext = createContext();
 
@@ -21,7 +23,21 @@ export const CartProvider = ({children}) =>{
         if(existsInCart){
             const updatedCart = cart.map((prod)=>{
                 if(prod.id === item.id){
-                    return {...prod, quantity:prod.quantity + item.quantity}
+                    if(prod.quantity + item.quantity <= prod.stock){
+                        return {...prod, quantity:prod.quantity + item.quantity}
+                    }else{
+                        toast.error(`No tenemos tanto stock de este producto. Maximo ${prod.stock}`, {
+                            position: "top-right",
+                            autoClose: 2000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                          })
+                          return {...prod, quantity:prod.stock}
+                    }
+
                 }else{
                     return prod
                 }

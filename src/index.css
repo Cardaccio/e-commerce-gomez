@@ -42,7 +42,6 @@ code {
 .center{
   max-width: 90vw;
   display: flex;
-  align-content: center;
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 1rem;
@@ -69,6 +68,7 @@ code {
 
 .full-div{
   height: 80%;
+
 }
 
 .outlined{

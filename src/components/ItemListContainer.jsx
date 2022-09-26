@@ -34,7 +34,9 @@ export default function ItemListContainer() {
   return (
     <div className="center full-div">
       <Banner/>
+      <div>
       {loading ? <CircularProgress /> : <ItemList items={items} />}
+      </div>
     </div>
   );
 }
